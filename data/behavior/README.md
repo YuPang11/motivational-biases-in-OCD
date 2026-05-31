@@ -1,1 +1,1 @@
-This folder contains behavioral data used in the manuscript.
+This folder contains EEG data used in the manuscript.
