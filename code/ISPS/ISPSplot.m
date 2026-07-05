@@ -310,7 +310,7 @@ freq_axis = parTF.freq4tf(:)';
 time_axis = parTF.toi4tf(:)';       
 
 % Analysis time window
-ANALYSIS_WIN = [0.45 0.7];
+ANALYSIS_WIN = [0.4 0.65];
 
 %% 2) EGI → FieldTrip planar rotation & layout
 elec = freq.elec;
@@ -470,7 +470,7 @@ freq_axis = parTF.freq4tf(:)';
 time_axis = parTF.toi4tf(:)';       
 
 % Analysis time window
-ANALYSIS_WIN = [0.4 0.8];
+ANALYSIS_WIN = [0.424 0.8];
 
 %% 2) EGI → FieldTrip planar rotation & layout
 elec = freq.elec;
