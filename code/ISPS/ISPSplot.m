@@ -562,7 +562,6 @@ set(ax, 'Position', [0.02, 0.20, 0.96, 0.80]);
 hold on;
 
 % 5. Manually draw ROI scatter points
-% ★★★ Change: reduce size from 15 to 8 ★★★
 sz = 8;  
 lw = 0.5; 
 
