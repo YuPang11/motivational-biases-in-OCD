@@ -172,8 +172,7 @@ disp('Loaded baseline-corrected ICPCall_all');
 
 % === 2️⃣ Define parameters ===
 MFchans = [6 127];  % Midfrontal channels (FCz, Cz)
-tvals   = [2.9194, 3.4082];  % Corresponding t values%tvals   = [3.2878, 3.8499];  % Corresponding t values
-%tvals   = [5.3689, 5.0774];  % Corresponding t values
+tvals   = [2.9194, 3.4082]; 
 weights = tvals ./ sum(tvals);  % Normalized weights
 fprintf('Weights = [%.4f, %.4f]\n', weights(1), weights(2));
 
@@ -210,7 +209,6 @@ disp('Loaded baseline-corrected ICPCall_all');
 % === 2️⃣ Define parameters ===
 MFchans = [6 127];  % Midfrontal channels (FCz, Cz)
 tvals   = [3.4548, 4.4553];  % Corresponding t values
-%tvals   = [3.1478, 4.4980];  % Corresponding t values
 weights = tvals ./ sum(tvals);  % Normalized weights
 fprintf('Weights = [%.4f, %.4f]\n', weights(1), weights(2));
 
@@ -382,7 +380,7 @@ cfg.style      = 'straight';
 cfg.marker     = 'on';
 cfg.zlim       = [-30 30];
 cfg.ylim       = [ICPC.freq(1) ICPC.freq(end)];  % 4–8 Hz
-cfg.xlim       = [0.4 0.65];                    % Time window
+cfg.xlim       = [0.424 0.8];                    % Time window
 ft_topoplotTFR(cfg, ICPC);
 colorbar; hold on
 
@@ -503,7 +501,7 @@ hold off;
 clc; clear; close all;
 
 %% 1) Load data
-load('F:\PIT\correct_all\HC\tICPC_all.mat', 'tICPC','parTF');  % tICPC, parTF
+load('F:\PIT\correct_all\OCD\tICPC_all.mat', 'tICPC','parTF');  % tICPC, parTF
 load('H:\MT_all(afterqujizhi)\final\correct_cue\cue_epoch\cue_baseline\ft_lap\HC02.mat', 'freq'); % Use freq.elec/label only
 
 fprintf('tICPC size = %s (sub × cond × chan × freq × time)\n', mat2str(size(tICPC)));
@@ -513,8 +511,8 @@ labels    = freq.label(:);          % 127
 freq_axis = parTF.freq4tf(:)';      % 7
 time_axis = parTF.toi4tf(:)';       % 131
 
-% Analysis time window (change to [0.45 0.65] if needed to match the paper)
-ANALYSIS_WIN = [0.45 0.7];
+% Analysis time window
+ANALYSIS_WIN = [0.424 0.8];
 
 %% 2) EGI → FieldTrip planar rotation (x=-y, y=x), and prepare layout once
 elec = freq.elec;
@@ -678,7 +676,7 @@ title('Incongruent – Congruent');
 %% ===== Extract the Incongruent–Congruent mean value of each electrode within timeROI =====
 
 % --- Confirm time-window indices ---
-timeROI = [0.4 0.65];
+timeROI = [0.424 0.8];
 iTime   = dsearchn(parTF.toi4tf', timeROI'); 
 iTime   = iTime(1):iTime(2);
 
@@ -794,8 +792,8 @@ if ~exist(results_dir, 'dir'); mkdir(results_dir); end
 csvfilename = fullfile(results_dir, 'ICPC_contra_ipsiocd0.4.8plottest.csv');
 
 % Time window → indices
-%timeROI = [0.45 0.65];
-timeROI = [0.4 0.8];%ocd
+%timeROI = [0.4 0.65];
+timeROI = [0.424 0.8];%ocd
 iTime   = dsearchn(parTF.toi4tf', timeROI'); 
 iTime   = iTime(1):iTime(2);
 
@@ -1021,8 +1019,8 @@ box off;
 pfcChans = [23 24 26 27 2 3 121 122];   % Left and right PFC channels
 tval_pfc = zeros(1, numel(pfcChans));   % Store t-values for each electrode
 
-% Time window of interest (0.4–0.65 s)
-iTime = dsearchn(parTF.toi4tf', [0.4 0.8]');
+% Time window of interest
+iTime = dsearchn(parTF.toi4tf', [0.424 0.8]');
 iTime = iTime(1):iTime(2);
 
 for c = 1:numel(pfcChans)
@@ -1156,8 +1154,7 @@ disp(tval_motor_R);
 clear TF_par TF_pfc
 
 %% === Define ROI time window ===
-% Example: 0.35 ~ 0.75 s (commonly used previously)
-timeROI = [0.35 0.75];
+timeROI = [0.424 0.8];
 iTime = dsearchn(parTF.toi4tf', timeROI');
 iTime = iTime(1):iTime(2);  % Convert to index range
 
@@ -1257,7 +1254,7 @@ clear TF_parL TF_parR TF_pfcL TF_pfcR
 clear TF_parL TF_parR TF_parAll TF_pfc
 
 %% === Define ROI time window ===
-timeROI = [0.45 0.7];
+timeROI = [0.424 0.8];
 iTime = dsearchn(parTF.toi4tf', timeROI');
 iTime = iTime(1):iTime(2);
 
