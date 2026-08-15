@@ -1,4 +1,6 @@
-This repository contains the code used to reproduce the behavioral, EEG, computational modeling, and figure-generation analyses reported in the manuscript.
+Repository information
+
+This repository contains the code and data resources used to reproduce the behavioral, EEG, computational modeling, and figure-generation analyses reported in the manuscript “Impaired midfrontal-motor theta phase synchronization characterizes maladaptive motivational behavior in obsessive-compulsive disorder.”
 
 ## Software
 The following software and packages were used:
@@ -10,7 +12,7 @@ R 4.4.3
 R packages: lme4, psych, and lmerTest
 IBM SPSS Statistics 22.0
 MRIcroGL
-Stan/RStan or related Stan-based modeling scripts
+Stan/RStan
 
 
 ## Figure generation
