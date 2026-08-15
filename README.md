@@ -132,5 +132,5 @@ r.All numerical values underlying the figures are provided in the corresponding 
 
 
 ## Data Availability
-The numerical data underlying the figures are provided in the Supporting Information files (S1–S6 Data). Behavioral and EEG data are available in the repository under data/behavior and data/egi, respectively. Numerical source data underlying the specific manuscript figures are provided separately as S1–S6 Data.
-
+The numerical data underlying the figures are provided in the Supporting Information files (S1–S6 Data). Participant-level behavioral data underlying the reported analyses are also provided in the corresponding Data files to facilitate reproducibility. Owing to the large size of the EEG dataset, the EEG data underlying the reported analyses are publicly available in the project’s GitHub repository under data/egi:
+https://github.com/YuPang11/motivational-biases-in-OCD.
