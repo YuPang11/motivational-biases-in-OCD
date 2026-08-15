@@ -1,4 +1,4 @@
-Repository information
+## Repository information
 
 This repository contains the code and data resources used to reproduce the behavioral, EEG, computational modeling, and figure-generation analyses reported in the manuscript “Impaired midfrontal-motor theta phase synchronization characterizes maladaptive motivational behavior in obsessive-compulsive disorder.”
 
